@@ -14,12 +14,15 @@ jobs:
     strategy:
       max-parallel: 2
       matrix:
+        recycle [yes, no]
         os: [ubuntu-latest, ubuntu-latest]
         include:
         - os: ubuntu-latest
+          recycle: yes
           style: "-not-recycle"
           file: Dockerfile
         - os: ubuntu-latest
+          recycle: no
           file: Dockerfile.not_recycle
           style: ""
 
