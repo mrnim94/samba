@@ -64,5 +64,6 @@ HEALTHCHECK --interval=60s --timeout=15s \
 
 VOLUME ["/etc", "/var/cache/samba", "/var/lib/samba", "/var/log/samba",\
             "/run/samba"]
+RUN chmod +x /usr/bin/samba.sh
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/samba.sh"]
