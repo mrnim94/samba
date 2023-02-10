@@ -4,7 +4,7 @@
 
 Samba docker container.
 
-I have consulted from https://github.com/dperson/samba/blob/master/Dockerfile
+I have consulted from https://github.com/dperson/samba
 
 # What is Samba?
 
