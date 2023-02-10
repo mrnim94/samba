@@ -10,7 +10,7 @@ on:
 jobs:
   build-publish-containers:
     name: Build and Publish Containers
-    runs-on: ${{ matrix.recycle }}
+    runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 2
       matrix:
