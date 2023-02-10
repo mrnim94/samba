@@ -2,7 +2,8 @@
 
 # Samba
 
-Samba docker container
+Samba docker container.
+
 I have consulted from https://github.com/dperson/samba/blob/master/Dockerfile
 
 # What is Samba?
