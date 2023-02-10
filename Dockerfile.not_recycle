@@ -33,6 +33,7 @@ RUN apk --no-cache --no-progress upgrade && \
     echo '   strict locking = no' >>$file && \
     echo '   aio read size = 0' >>$file && \
     echo '   aio write size = 0' >>$file && \
+    echo '   oplocks = False' >>$file && \
     echo '' >>$file && \
     echo '   # Security' >>$file && \
     echo '   client ipc max protocol = SMB3' >>$file && \
