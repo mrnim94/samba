@@ -16,10 +16,10 @@ jobs:
       max-parallel: 2
       matrix:
         include:
-        - style: "-not-recycle"
-          dockerfile: Dockerfile
-        - dockerfile: Dockerfile.not_recycle
+        - dockerfile: Dockerfile
           style: ""
+        - dockerfile: Dockerfile.not_recycle
+          style: "-not-recycle"
 
     steps:
       - name: Checkout
