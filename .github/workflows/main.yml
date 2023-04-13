@@ -10,19 +10,15 @@ on:
 jobs:
   build-publish-containers:
     name: Build and Publish Containers
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       max-parallel: 2
       matrix:
-        recycle: [yes, no]
         include:
-        - os: ubuntu-latest
-          recycle: yes
-          style: "-not-recycle"
-          file: Dockerfile
-        - os: ubuntu-latest
-          recycle: no
-          file: Dockerfile.not_recycle
+        - style: "-not-recycle"
+          dockerfile: Dockerfile
+        - dockerfile: Dockerfile.not_recycle
           style: ""
 
     steps:
@@ -41,6 +37,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./${{ matrix.file }}
+          file: ./${{ matrix.dockerfile }}
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/samba:latest${{ matrix.style }}, ${{ secrets.DOCKER_HUB_USERNAME }}/samba:${{ env.RELEASE_VERSION }}${{ matrix.style }}
