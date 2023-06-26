@@ -1,6 +1,9 @@
 FROM alpine:3.17.3
 MAINTAINER Mr Nim <mr.nim94@gmail.com>
 
+#https://github.com/kubernetes-csi/csi-driver-smb/issues/79#issuecomment-675325067
+RUN sed -i -e 's/v[[:digit:]]\..*\//edge\//g' /etc/apk/repositories
+
 # Install samba
 RUN apk --no-cache --no-progress upgrade && \
     apk --no-cache --no-progress add bash samba shadow tini tzdata && \
