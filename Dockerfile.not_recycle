@@ -40,7 +40,6 @@ RUN apk --no-cache --no-progress upgrade && \
     echo '   locking = no' >>$file && \
     echo '   blocking locks = no' >>$file && \
     echo '   smb encrypt = off' >>$file && \
-    echo '   aio max threads = 500' >>$file && \
     echo '' >>$file && \
     echo '   # Security' >>$file && \
     echo '   client ipc max protocol = SMB3' >>$file && \
