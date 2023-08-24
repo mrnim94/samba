@@ -34,11 +34,12 @@ RUN apk --no-cache --no-progress upgrade && \
     echo '   printcap name = /dev/null' >>$file && \
     echo '   disable spoolss = yes' >>$file && \
     echo '   strict locking = no' >>$file && \
-    echo '   aio read size = 0' >>$file && \
-    echo '   aio write size = 0' >>$file && \
+    echo '   aio read size = 1' >>$file && \
+    echo '   aio write size = 1' >>$file && \
     echo '   oplocks = False' >>$file && \
     echo '   locking = no' >>$file && \
     echo '   blocking locks = no' >>$file && \
+    echo '   aio max threads = 500' >>$file && \
     echo '' >>$file && \
     echo '   # Security' >>$file && \
     echo '   client ipc max protocol = SMB3' >>$file && \
