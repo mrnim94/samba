@@ -1,6 +1,6 @@
 FROM arm64v8/alpine
 COPY qemu-aarch64-static /usr/bin/
-MAINTAINER David Personette <dperson@gmail.com>
+MAINTAINER David Personette <mrnim94@gmail.com>
 
 # Install samba
 RUN apk --no-cache --no-progress upgrade && \

@@ -10,7 +10,7 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: David Personette (dperson@gmail.com),
+#        AUTHOR: David Personette (mrnim94@gmail.com),
 #  ORGANIZATION:
 #       CREATED: 09/28/2014 12:11
 #      REVISION: 1.0
