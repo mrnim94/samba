@@ -1,0 +1,30 @@
+{{- if .Values.storageClass.usedBySambaServer.enabled }}
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: {{ .Values.storageClass.usedBySambaServer.name }}
+provisioner: {{ .Values.storageClass.usedBySambaServer.provisioner }}
+{{- with .Values.storageClass.usedBySambaServer.parameters }}
+parameters:
+  {{- toYaml . | nindent 2}}
+{{- end }}
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
+{{- end }}
+
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: {{ .Values.storageClass.provideForClient.name }}
+provisioner: smb.csi.k8s.io
+{{- with .Values.storageClass.usedBySambaServer.parameters }}
+parameters:
+  {{- toYaml . | nindent 2}}
+{{- end }}
+volumeBindingMode: Immediate
+mountOptions:
+  - dir_mode=0777
+  - file_mode=0777
+  - uid=1001
+  - gid=1001
