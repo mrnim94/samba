@@ -8,8 +8,8 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: samba-port
       protocol: TCP
-      name: http
+      name: samba-port
   selector:
     {{- include "samba-server.selectorLabels" . | nindent 4 }}
