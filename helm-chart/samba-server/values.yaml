@@ -117,13 +117,13 @@ envVars:
   USERNAME:
     valueFrom:
       secretKeyRef:
-        secretName: smbcreds
-        secretKey: username
+        key: username
+        name: smbcreds
   PASSWORD:
     valueFrom:
       secretKeyRef:
-        secretName: smbcreds
-        secretKey: password
+        key: password
+        name: smbcreds
 
 secrets:
   enabled: false
