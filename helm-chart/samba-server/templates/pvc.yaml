@@ -4,7 +4,7 @@ metadata:
   name: pvc-networkdisk-smbshare
 spec:
   accessModes:
-    - ReadWriteOnce
+    {{- toYaml .Values.persistentVolumeClaim.usedBySambaServer.accessModes | nindent 4 }}
   resources:
     requests:
       storage: {{ .Values.persistentVolumeClaim.usedBySambaServer.storageSize }}
