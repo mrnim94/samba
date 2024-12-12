@@ -39,6 +39,7 @@ jobs:
           context: .
           file: ./${{ matrix.dockerfile }}
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/samba:latest${{ matrix.style }}, ${{ secrets.DOCKER_HUB_USERNAME }}/samba:${{ env.RELEASE_VERSION }}${{ matrix.style }}
       - name: Login to quay.io
         uses: docker/login-action@v3
@@ -52,4 +53,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: quay.io/nimtechnology/samba:latest${{ matrix.style }}, quay.io/nimtechnology/samba:${{ env.RELEASE_VERSION }}${{ matrix.style }}
