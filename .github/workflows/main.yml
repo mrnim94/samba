@@ -54,4 +54,4 @@ jobs:
           file: ./Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: quay.io/nimtechnology/samba:latest${{ matrix.style }}, quay.io/nimtechnology/samba:${{ env.RELEASE_VERSION }}${{ matrix.style }}
+          tags: quay.io/underndog/samba:latest${{ matrix.style }}, quay.io/underndog/samba:${{ env.RELEASE_VERSION }}${{ matrix.style }}
